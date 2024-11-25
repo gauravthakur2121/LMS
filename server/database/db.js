@@ -7,7 +7,7 @@ import mongoose from "mongoose";
     }
     catch (error)
     {
-        console.log("error occured")
+        console.log("error occured" , error)
 
     }
 }
