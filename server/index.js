@@ -24,6 +24,8 @@ app.use(cors({
 }));
 
 // Routes setup
+
+
 app.use("/api/v1/user", userRoute);
 
 app.get("/home", (req, res) => {

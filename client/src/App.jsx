@@ -3,6 +3,9 @@ import Login from './Pages/Login';
 import MainLayout from './layout/MainLayout';
 import HeroSection from './Pages/student/HeroSection';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Courses from './Pages/student/Courses';
+import MyLearning from './Pages/student/MyLearning';
+import Profile from './Pages/student/Profile';
 
 const appRouter = createBrowserRouter([
   {
@@ -14,13 +17,21 @@ const appRouter = createBrowserRouter([
         element: (
           <>
             <HeroSection />
-            {/* Add courses or other components here */}
+            <Courses/>
           </>
         ),
       },
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "my-learning",
+        element: <MyLearning />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
     ],
   },

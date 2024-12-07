@@ -13,11 +13,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLoginUserMutation, useRegisterUserMutation } from "@/features/api/authApi";
 import { Loader2 } from "lucide-react";
 import { useState , useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Login = () => {
   const [loginInput, setLoginInput] = useState({ email: "", password: "" });
   const [signupInput, setSignupInput] = useState({ name: "", email: "", password: "" });
+  const navigate = useNavigate();
 
   const [
     registerUser,
@@ -61,6 +63,7 @@ const Login = () => {
     }
     if (loginIsSuccess && loginData) {
       toast.success(loginData.message || "Login successful.");
+      navigate("/");
     }
     if (registerError) {
       toast.error(registerError.data?.message || "Signup Failed.");
